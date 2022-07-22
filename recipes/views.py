@@ -6,7 +6,7 @@ from django.urls import path
 
 # Create your views here.
 def home(request):
-    return render(request, 'recipes_template/home.html')
+    return render(request, 'home.html')
 
 
 def sobre(request):
