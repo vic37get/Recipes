@@ -1,17 +1,16 @@
-from django.contrib import admin
-from django.http import HttpResponse
 from django.shortcuts import render
-from django.urls import path
 
 
 # Create your views here.
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'home.html', context={
+        'nome': 'Victor',
+    })
 
 
 def sobre(request):
-    return HttpResponse('Sobre')
+    return render(request, 'sobre.html')
 
 
 def contato(request):
-    return HttpResponse('Contato')
+    return render(request, 'contato .html')
