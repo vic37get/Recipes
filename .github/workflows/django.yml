@@ -29,15 +29,15 @@ jobs:
           # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Run migrations
-        run: |
+      run: |
           python manage.py makemigrations --noinput
           python manage.py migrate --noinput
     - name: Run Tests
-        run: |
+      run: |
           python manage.py test
 
     - name: Check Syntax #We are just testing the syntax in names app; pycodestyle uses pep8 conventions of max line length of 79 characters while Django recommends 119 characters
-        run: pycodestyle --statistics names
+      run: pycodestyle --statistics names
 
     - name: Add remote origin
       if: github.ref == 'refs/heads/master' && job.status == 'success' #we specify that this action will ONLY run if everything up to now is successful- so if theres a fail in the tests, then this will not be deployed.
