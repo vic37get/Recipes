@@ -12,7 +12,7 @@ jobs:
         - name: Checkout
           uses: actions/checkout@v2
         - name: Deploy django to heroku
-          uses: vic37get/Recipes@v0.1
+          uses: vic37get/Recipes@v0.01
           with: 
             heroku_app_name : ${{ secrets.HEROKU_APP_NAME }}
             heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
