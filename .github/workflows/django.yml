@@ -43,4 +43,5 @@ jobs:
     
     - name: Deploy to Heroku
       run: |
+        heroku config:set DISABLE_COLLECTSTATIC=1
         git push heroku HEAD:master -f
