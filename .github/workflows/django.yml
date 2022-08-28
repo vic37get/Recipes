@@ -35,7 +35,6 @@ jobs:
     - name: Run Tests
       run: |
           python manage.py test
-
     - name: Add remote origin
       if: github.ref == 'refs/heads/master' && job.status == 'success' #we specify that this action will ONLY run if everything up to now is successful- so if theres a fail in the tests, then this will not be deployed.
       run: |
@@ -43,4 +42,8 @@ jobs:
     
     - name: Deploy to Heroku
       run: |
+        heroku config:set DISABLE_COLLECTSTATIC=1
         git push heroku HEAD:master -f
+        heroku run 'bower install --config.interactive=false;grunt prep;python manage.py collectstatic --noinput'
+        heroku config:unset DISABLE_COLLECTSTATIC
+        heroku run python manage.py collectstatic
