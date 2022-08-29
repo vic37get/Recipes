@@ -16,7 +16,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-aj6&-g!!o0ij8jzraj68va1n-_r-y(67%&87@l)eo=9n)p0m=&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['app-recipes3.herokuapp.com']
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
