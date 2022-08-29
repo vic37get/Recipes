@@ -44,7 +44,7 @@ outputs:
     status:
         description: "Status of the action"
 runs:
-    using: "django"
-    main: "index.js"
+    using: "django4"
+    main: "recipes/pages/home.html"
 
 
